@@ -32,16 +32,16 @@ contract GameContract is Ownable {
     }
 
     function mintNftCharacter(uint8 _shakerType) public {
-        nftCharacter.mintShaker(_shakerType, msg.sender);
+        nftCharacter.mintShaker(msg.sender, _shakerType);
         mintTokens();
     }
 
     function mintNftOffGear(uint _equipmentType) public {
-        nftOffGear.mintEquipment(_equipmentType, msg.sender);
+        nftOffGear.mintEquipment(msg.sender, _equipmentType);
     }
 
     function mintNftDefGear(uint _equipmentType) public {
-        nftDefGear.mintEquipment(_equipmentType, msg.sender);
+        nftDefGear.mintEquipment(msg.sender, _equipmentType);
     }
 
     function mintTokens() private onlyOwner {
